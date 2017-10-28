@@ -21,5 +21,12 @@
     "test-full": "jest --coverage --verbose",
     "test-changed": "jest --onlyChanged",
     "test-watch": "jest --watch"
+  },
+  "dependencies": {
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.6.0",
+    "jest": "^21.2.1"
   }
 }
