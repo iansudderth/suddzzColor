@@ -7,6 +7,17 @@ var {
   toRGBA,
 } = require('../lib/conversionFunctions');
 
+var {
+  hsvFormat,
+  hsvaFormat,
+  hslFormat,
+  hslaFormat,
+  hexFormat,
+  hex8Format,
+  rgbFormat,
+  rgbaFormat,
+} = require('./formatRegEx');
+
 describe('toHSV', () => {
   it('outputs a string', () => {});
 

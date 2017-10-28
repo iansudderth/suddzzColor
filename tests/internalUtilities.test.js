@@ -1,4 +1,14 @@
 var { getFormat, outputOriginalFormat } = require('../lib/internalUtilites');
+var {
+  hsvFormat,
+  hsvaFormat,
+  hslFormat,
+  hslaFormat,
+  hexFormat,
+  hex8Format,
+  rgbFormat,
+  rgbaFormat,
+} = require('./formatRegEx');
 
 describe('getFormat', () => {
   it('returns a string', () => {});

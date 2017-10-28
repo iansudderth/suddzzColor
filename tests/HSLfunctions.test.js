@@ -14,6 +14,17 @@ var {
   invert,
 } = require('../lib/HSLfunctions');
 
+var {
+  hsvFormat,
+  hsvaFormat,
+  hslFormat,
+  hslaFormat,
+  hexFormat,
+  hex8Format,
+  rgbFormat,
+  rgbaFormat,
+} = require('./formatRegEx');
+
 describe('hsl', () => {
   it('returns a string', () => {});
 
@@ -30,11 +41,23 @@ describe('hsla', () => {
   it('returns null on invalid input', () => {});
 });
 
-describe('hue', () => {});
+describe('hue', () => {
+  it('returns a number', () => {});
 
-describe('saturation', () => {});
+  it('returns a number between 0 and 360', () => {});
+});
 
-describe('lightness', () => {});
+describe('saturation', () => {
+  it('returns a number if no mode is given', () => {});
+
+  it('returns a value corresponding to the mode', () => {});
+});
+
+describe('lightness', () => {
+  it('returns a number if no mode is given', () => {});
+
+  it('returns a value corresponding to the mode', () => {});
+});
 
 describe('adjustHue', () => {
   it('returns a string', () => {});
