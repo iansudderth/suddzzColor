@@ -1,0 +1,25 @@
+{
+  "name": "suddzzColor",
+  "version": "1.0.0",
+  "description": "A wrapper for tinyColor for easier use in applications",
+  "main": "index.js",
+  "author": "Ian Sudderth",
+  "license": "MIT",
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "parser": "babylon",
+    "semi": true,
+    "tabWidth": 2
+  },
+  "scripts": {
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "test-full": "jest --coverage --verbose",
+    "test-changed": "jest --onlyChanged",
+    "test-watch": "jest --watch"
+  }
+}
