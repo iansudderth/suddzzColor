@@ -21,7 +21,7 @@ describe('outputOriginalFormat', () => {
 
   it("returns a string in the color's original format if passed a tinyColor object", () => {});
 
-  it('echos the input in its original format if input is a valid color string', () => {});
+  it('echos the input in its original format if input is a valid color string and logs a warning', () => {});
 
   it('returns null on invalid input', () => {});
 });
