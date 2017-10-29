@@ -22,9 +22,9 @@ const invalidColorHex = '#FF00F';
 const invalidColorHexShort = '#GF0';
 const invalidColorHex8 = '#FAB9CC000';
 const invalidColorName = 'blur';
-const invalidColorRGB = 'rgb(234, 0)';
-const invalidColorRGBA = 'rgba(23, 55, 115, 1.1.)';
-const invalidColorHSL = 'hsl(490, 222, 80%)';
+const invalidColorRGB = 'rgb(284, G0, AA';
+const invalidColorRGBA = 'rgba(23, 55, FF, 1.1.';
+const invalidColorHSL = 'hsl(490, F2, 80)';
 const invalidColorHSLA = 'hsla(320, 11, .5)';
 
 const invalidColorArray = [
@@ -44,7 +44,7 @@ const red = {
   hexShort: '#f00',
   name: 'red',
   rgb: 'rgb(255,0,0)',
-  rba: 'rgba(255,0,0,1)',
+  rgba: 'rgba(255,0,0,.5)',
   hsl: 'hsl(0,100%,50%)',
   hsla: 'hsla(0,100%,50%,1)',
 };
