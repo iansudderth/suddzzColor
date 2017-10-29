@@ -40,57 +40,57 @@ const invalidColorArray = [
 
 const red = {
   hex: '#FF0000',
-  hex8: '#FF0000FF',
+  hex8: '#FF000080',
   hexShort: '#f00',
   name: 'red',
   rgb: 'rgb(255,0,0)',
   rgba: 'rgba(255,0,0,.5)',
   hsl: 'hsl(0,100%,50%)',
-  hsla: 'hsla(0,100%,50%,1)',
+  hsla: 'hsla(0,100%,50%,.5)',
 };
 
 const blue = {
   hex: '#0000FF',
-  hex8: '#0000FFFF',
+  hex8: '#0000FF80',
   hexShort: '#00f',
   name: 'blue',
   rgb: 'rgb(0,0,255)',
-  rgba: 'rgba(0,0,255,1)',
+  rgba: 'rgba(0,0,255,.5)',
   hsl: 'hsl(240,100%, 50%)',
-  hsla: 'hsla(240,100%,50%,1)',
+  hsla: 'hsla(240,100%,50%,.5)',
 };
 
 const green = {
   hex: '#00FF00',
-  hex8: '#00FF00FF',
+  hex8: '#00FF0080',
   hexShort: '#0F0',
   name: 'lime',
   rgb: 'rgb(0,255,0)',
-  rgba: 'rgba(0,255,0,1)',
+  rgba: 'rgba(0,255,0,.5)',
   hsl: 'hsl(120, 100%, 50%)',
-  hsla: 'hsla(120,100%, 50%, 1)',
+  hsla: 'hsla(120,100%, 50%, .5)',
 };
 
 const white = {
   hex: '#FFFFFF',
-  hex8: '#FFFFFFFF',
+  hex8: '#FFFFFF80',
   hexShort: '#FFF',
   name: 'white',
   rgb: 'rgb(255,255,255)',
-  rgba: 'rgba(255,255,255,1)',
+  rgba: 'rgba(255,255,255,.5)',
   hsl: 'hsl(0, 0%, 100%)',
-  hsla: 'hsla(0, 0%, 100%, 1)',
+  hsla: 'hsla(0, 0%, 100%, .5)',
 };
 
 const black = {
   hex: '#000000',
-  hex8: '#000000FF',
+  hex8: '#00000080',
   hexShort: '#000',
   name: 'black',
   rgb: 'rgb(0,0,0)',
-  rgba: 'rgba(0,0,0,1)',
+  rgba: 'rgba(0,0,0,.5)',
   hsl: 'hsl(0, 0%, 0%)',
-  hsla: 'hsla(0,0%,0%,1)',
+  hsla: 'hsla(0,0%,0%,.5)',
 };
 
 module.exports.validTestColorArray = validTestColorArray;
