@@ -60,10 +60,10 @@ describe('hsla', () => {
   });
 
   it('outputs in HSLA format', () => {
-    expect(hslaTest(hsl(300, 100, 50, 0.2))).toBe(true);
+    expect(hslaTest(hsla(300, 100, 50, 0.2))).toBe(true);
   });
 
-  it('uses 0 as a value when no argument is passed, or 1 for alpha', () => {
+  it('uses 0 as a value when no argument is passed', () => {
     expect(hsla()).toBe('hsla(0, 0%, 0%, 0)');
   });
 
@@ -82,7 +82,7 @@ describe('hue', () => {
   it('returns a number between 0 and 360', () => {
     _.each(validTestColorArray, color => {
       var colorHue = hue(color);
-      expect(color >= 0 && color <= 360).toBe(true);
+      expect(colorHue >= 0 && colorHue <= 360).toBe(true);
     });
   });
 
@@ -110,7 +110,7 @@ describe('saturation', () => {
     var color = 'hsl(0,50%,50%)';
     expect(saturation(color, 'decimal')).toBe(0.5);
     expect(saturation(color, 'percent')).toBe(50);
-    expect(saturation(color, 'hex')).toBe('90');
+    expect(saturation(color, 'hex')).toBe('80');
     expect(saturation(color, 'byteScale')).toBe(128);
   });
 
@@ -132,7 +132,7 @@ describe('lightness', () => {
     var color = 'hsl(0,50%,50%)';
     expect(lightness(color, 'decimal')).toBe(0.5);
     expect(lightness(color, 'percent')).toBe(50);
-    expect(lightness(color, 'hex')).toBe('90');
+    expect(lightness(color, 'hex')).toBe('80');
     expect(lightness(color, 'byteScale')).toBe(128);
   });
 
@@ -160,7 +160,7 @@ describe('adjustHue', () => {
     expect(hexTest(adjustHue('#FF00FF', 100))).toBe(true);
     expect(hex8Test(adjustHue('#FF00FF90', 100))).toBe(true);
     expect(hslTest(adjustHue('hsl(100, 100%, 50%)', 100))).toBe(true);
-    expect(hslaTest(adjustHue('hsl(100, 100%, 50%, .5)', 100))).toBe(true);
+    expect(hslaTest(adjustHue('hsla(100, 100%, 50%, .5)', 100))).toBe(true);
     expect(rgbTest(adjustHue('rgb(255, 0, 0)', 100))).toBe(true);
     expect(rgbaTest(adjustHue('rgba(255, 0, 0, .5)', 100))).toBe(true);
   });
@@ -202,7 +202,7 @@ describe('lighten', () => {
     expect(hexTest(lighten('#FF00FF', 10))).toBe(true);
     expect(hex8Test(lighten('#FF00FF90', 10))).toBe(true);
     expect(hslTest(lighten('hsl(100, 100%, 50%)', 10))).toBe(true);
-    expect(hslaTest(lighten('hsl(100, 100%, 50%, .5)', 10))).toBe(true);
+    expect(hslaTest(lighten('hsla(100, 100%, 50%, .5)', 10))).toBe(true);
     expect(rgbTest(lighten('rgb(255, 0, 0)', 10))).toBe(true);
     expect(rgbaTest(lighten('rgba(255, 0, 0, .5)', 10))).toBe(true);
   });
@@ -223,7 +223,7 @@ describe('lighten', () => {
 
   it('changes the lightness based on the given value', () => {
     expect(lighten('#f00', 10)).toBe('#ff3333');
-    expect(light('#f0A', 100)).toBe('#ffffff');
+    expect(lighten('#f0A', 100)).toBe('#ffffff');
   });
 
   it('darkens the color if a negative number is passed in', () => {
@@ -249,7 +249,7 @@ describe('darken', () => {
     expect(hexTest(darken('#FF00FF', 10))).toBe(true);
     expect(hex8Test(darken('#FF00FF90', 10))).toBe(true);
     expect(hslTest(darken('hsl(100, 100%, 50%)', 10))).toBe(true);
-    expect(hslaTest(darken('hsl(100, 100%, 50%, .5)', 10))).toBe(true);
+    expect(hslaTest(darken('hsla(100, 100%, 50%, .5)', 10))).toBe(true);
     expect(rgbTest(darken('rgb(255, 0, 0)', 10))).toBe(true);
     expect(rgbaTest(darken('rgba(255, 0, 0, .5)', 10))).toBe(true);
   });
@@ -296,7 +296,7 @@ describe('saturate', () => {
     expect(hexTest(saturate('#FF00FF', 10))).toBe(true);
     expect(hex8Test(saturate('#FF00FF90', 10))).toBe(true);
     expect(hslTest(saturate('hsl(100, 100%, 50%)', 10))).toBe(true);
-    expect(hslaTest(saturate('hsl(100, 100%, 50%, .5)', 10))).toBe(true);
+    expect(hslaTest(saturate('hsla(100, 100%, 50%, .5)', 10))).toBe(true);
     expect(rgbTest(saturate('rgb(255, 0, 0)', 10))).toBe(true);
     expect(rgbaTest(saturate('rgba(255, 0, 0, .5)', 10))).toBe(true);
   });
@@ -341,7 +341,7 @@ describe('desaturate', () => {
     expect(hexTest(desaturate('#FF00FF', 10))).toBe(true);
     expect(hex8Test(desaturate('#FF00FF90', 10))).toBe(true);
     expect(hslTest(desaturate('hsl(100, 100%, 50%)', 10))).toBe(true);
-    expect(hslaTest(desaturate('hsl(100, 100%, 50%, .5)', 10))).toBe(true);
+    expect(hslaTest(desaturate('hsla(100, 100%, 50%, .5)', 10))).toBe(true);
     expect(rgbTest(desaturate('rgb(255, 0, 0)', 10))).toBe(true);
     expect(rgbaTest(desaturate('rgba(255, 0, 0, .5)', 10))).toBe(true);
   });
@@ -386,7 +386,7 @@ describe('greyScale', () => {
     expect(hexTest(greyScale('#FF00FF'))).toBe(true);
     expect(hex8Test(greyScale('#FF00FF90'))).toBe(true);
     expect(hslTest(greyScale('hsl(100, 100%, 50%)'))).toBe(true);
-    expect(hslaTest(greyScale('hsl(100, 100%, 50%, .5)'))).toBe(true);
+    expect(hslaTest(greyScale('hsla(100, 100%, 50%, .5)'))).toBe(true);
     expect(rgbTest(greyScale('rgb(255, 0, 0)'))).toBe(true);
     expect(rgbaTest(greyScale('rgba(255, 0, 0, .5)'))).toBe(true);
   });
@@ -423,7 +423,7 @@ describe('complement', () => {
     expect(hexTest(complement('#FF00FF'))).toBe(true);
     expect(hex8Test(complement('#FF00FF90'))).toBe(true);
     expect(hslTest(complement('hsl(100, 100%, 50%)'))).toBe(true);
-    expect(hslaTest(complement('hsl(100, 100%, 50%, .5)'))).toBe(true);
+    expect(hslaTest(complement('hsla(100, 100%, 50%, .5)'))).toBe(true);
     expect(rgbTest(complement('rgb(255, 0, 0)'))).toBe(true);
     expect(rgbaTest(complement('rgba(255, 0, 0, .5)'))).toBe(true);
   });
@@ -460,17 +460,17 @@ describe('invert', () => {
     expect(hexTest(invert('#FF00FF'))).toBe(true);
     expect(hex8Test(invert('#FF00FF90'))).toBe(true);
     expect(hslTest(invert('hsl(100, 100%, 50%)'))).toBe(true);
-    expect(hslaTest(invert('hsl(100, 100%, 50%, .5)'))).toBe(true);
+    expect(hslaTest(invert('hsla(100, 100%, 50%, .5)'))).toBe(true);
     expect(rgbTest(invert('rgb(255, 0, 0)'))).toBe(true);
     expect(rgbaTest(invert('rgba(255, 0, 0, .5)'))).toBe(true);
   });
 
   it('outputs in the given format if one is passed', () => {
     var color = '#FF00FF';
-    expect(hexTest(invert(color, 'hex'))).toBe(true);
-    expect(hex8Test(invert(color, 'hex8'))).toBe(true);
-    expect(rgbTest(invert(color, 'rgb'))).toBe(true);
-    expect(hslTest(invert(color, 'hsl'))).toBe(true);
+    expect(hexTest(invert(color, 100, 'hex'))).toBe(true);
+    expect(hex8Test(invert(color, 100, 'hex8'))).toBe(true);
+    expect(rgbTest(invert(color, 100, 'rgb'))).toBe(true);
+    expect(hslTest(invert(color, 100, 'hsl'))).toBe(true);
   });
 
   it('returns null on invalid input', () => {

@@ -14,7 +14,7 @@ var {
 var { validTestColorArray, invalidColorArray } = require('./testColors');
 
 var testRedRGB = 'rgb(255, 0, 0)';
-var testRedRGBA = 'rgba(255, 0, 0, .5)';
+var testRedRGBA = 'rgba(255, 0, 0, 0.5)';
 
 describe('rgb', () => {
   it('returns a string', () => {
@@ -85,7 +85,7 @@ describe('red', () => {
     expect(red(testRedRGB, 'byteScale')).toBe(255);
     expect(red(testRedRGB, 'decimal')).toBe(1);
     expect(red(testRedRGB, 'percent')).toBe(100);
-    expect(red(testRedRGB, 'hex')).toBe('FF');
+    expect(red(testRedRGB, 'hex')).toBe('ff');
   });
 });
 
@@ -161,7 +161,7 @@ describe('mix', () => {
     expect(mix('#f00', '#00f', 50, 'hex')).toBe('#7f007f');
     expect(mix('#f00', '#00f', 25, 'hex')).toBe('#3f00bf');
     expect(mix('rgba(255, 0, 0, 0.5)', '#00f', 50, 'rgba')).toBe(
-      'rgba(63, 0, 191, 0.75)',
+      'rgba(127, 0, 127, 0.75)',
     );
   });
 });
