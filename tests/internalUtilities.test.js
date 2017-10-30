@@ -48,7 +48,7 @@ describe('outputOriginalFormat', () => {
     var tHex = tinyColor(red.hex);
     expect(hexTest(outputOriginalFormat(tHex))).toBeTruthy();
 
-    var tHex8 = tinycolor(red.hex8).setAlpha(0.5);
+    var tHex8 = tinyColor(red.hex8).setAlpha(0.5);
     expect(hex8Test(outputOriginalFormat(tHex8))).toBeTruthy();
 
     var tHSL = tinyColor(red.hsl);
@@ -60,7 +60,7 @@ describe('outputOriginalFormat', () => {
     var tRGB = tinyColor(red.rgb);
     expect(rgbTest(outputOriginalFormat(tRGB))).toBeTruthy();
 
-    var tRGBA = tinycolor(red.rgba).setAlpha(0.5);
+    var tRGBA = tinyColor(red.rgba).setAlpha(0.5);
     expect(rgbaTest(outputOriginalFormat(tRGBA))).toBeTruthy();
   });
 

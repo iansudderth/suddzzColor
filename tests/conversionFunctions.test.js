@@ -141,17 +141,17 @@ describe('toHex8', () => {
   });
 
   it('returns a converted color', () => {
-    expect(toHex8(blue.rgb)).toBe(blue.hex8);
+    expect(toHex8(blue.rgb)).toBe(blue.hex8FullAlpha);
     expect(toHex8(blue.rgba)).toBe(blue.hex8);
-    expect(toHex8(blue.hex)).toBe(blue.hex8);
+    expect(toHex8(blue.hex)).toBe(blue.hex8FullAlpha);
     expect(toHex8(blue.hex8)).toBe(blue.hex8);
-    expect(toHex8(blue.hsl)).toBe(blue.hex8);
+    expect(toHex8(blue.hsl)).toBe(blue.hex8FullAlpha);
     expect(toHex8(blue.hsla)).toBe(blue.hex8);
   });
 
   it('can accept tinyColor objects as an input', () => {
     var tColor = tinyColor('#0000FF');
-    expect(toHex8(tColor)).toBe(blue.hex8);
+    expect(toHex8(tColor)).toBe(blue.hex8FullAlpha);
 
     tColor.setAlpha(0.5);
     expect(toHex8(tColor)).toBe(blue.hex8);

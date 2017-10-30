@@ -1,17 +1,13 @@
-const testColorHex = '#FF00FF';
-const testColorHexShort = '#3F2';
+const testColorHex = '#ff00ff';
 const testColorHex8 = '#0f920ff0';
-const testColorName = 'red';
 const testColorRGB = 'rgb(22, 245, 222)';
-const testColorRGBA = 'rgba(245, 22, 113, .5)';
+const testColorRGBA = 'rgba(245, 22, 113, 0.5)';
 const testColorHSL = 'hsl(290, 88%, 80%)';
-const testColorHSLA = 'hsla(120,55%, 90%, .9)';
+const testColorHSLA = 'hsla(120, 55%, 90%, 0.9)';
 
 const validTestColorArray = [
   testColorHex,
-  testColorHexShort,
   testColorHex8,
-  testColorName,
   testColorRGB,
   testColorRGBA,
   testColorHSL,
@@ -39,65 +35,68 @@ const invalidColorArray = [
 ];
 
 const red = {
-  hex: '#FF0000',
-  hex8: '#FF000080',
+  hex: '#ff0000',
+  hex8: '#ff000080',
+  hex8FullAlpha: '#ff0000ff',
   hexShort: '#f00',
   name: 'red',
-  rgb: 'rgb(255,0,0)',
-  rgba: 'rgba(255,0,0,.5)',
-  hsl: 'hsl(0,100%,50%)',
-  hsla: 'hsla(0,100%,50%,.5)',
+  rgb: 'rgb(255, 0, 0)',
+  rgba: 'rgba(255, 0, 0, 0.5)',
+  hsl: 'hsl(0, 100%, 50%)',
+  hsla: 'hsla(0, 100%, 50%, 0.5)',
 };
 
 const blue = {
-  hex: '#0000FF',
-  hex8: '#0000FF80',
+  hex: '#0000ff',
+  hex8: '#0000ff80',
+  hex8FullAlpha: '#0000ffff',
   hexShort: '#00f',
   name: 'blue',
-  rgb: 'rgb(0,0,255)',
-  rgba: 'rgba(0,0,255,.5)',
-  hsl: 'hsl(240,100%, 50%)',
-  hsla: 'hsla(240,100%,50%,.5)',
+  rgb: 'rgb(0, 0, 255)',
+  rgba: 'rgba(0, 0, 255, 0.5)',
+  hsl: 'hsl(240, 100%, 50%)',
+  hsla: 'hsla(240, 100%, 50%, 0.5)',
 };
 
 const green = {
-  hex: '#00FF00',
-  hex8: '#00FF0080',
-  hexShort: '#0F0',
+  hex: '#00ff00',
+  hex8: '#00ff0080',
+  hex8FullAlpha: '#00ff00ff',
+  hexShort: '#0f0',
   name: 'lime',
-  rgb: 'rgb(0,255,0)',
-  rgba: 'rgba(0,255,0,.5)',
+  rgb: 'rgb(0, 255, 0)',
+  rgba: 'rgba(0, 255, 0, 0.5)',
   hsl: 'hsl(120, 100%, 50%)',
-  hsla: 'hsla(120,100%, 50%, .5)',
+  hsla: 'hsla(120, 100%, 50%, 0.5)',
 };
 
 const white = {
-  hex: '#FFFFFF',
-  hex8: '#FFFFFF80',
-  hexShort: '#FFF',
+  hex: '#ffffff',
+  hex8: '#ffffff80',
+  hex8FullAlpha: '#ffffffff',
+  hexShort: '#fff',
   name: 'white',
-  rgb: 'rgb(255,255,255)',
-  rgba: 'rgba(255,255,255,.5)',
+  rgb: 'rgb(255, 255, 255)',
+  rgba: 'rgba(255, 255, 255, 0.5)',
   hsl: 'hsl(0, 0%, 100%)',
-  hsla: 'hsla(0, 0%, 100%, .5)',
+  hsla: 'hsla(0, 0%, 100%, 0.5)',
 };
 
 const black = {
   hex: '#000000',
   hex8: '#00000080',
+  hex8FullAlpha: '#000000ff',
   hexShort: '#000',
   name: 'black',
-  rgb: 'rgb(0,0,0)',
-  rgba: 'rgba(0,0,0,.5)',
+  rgb: 'rgb(0, 0, 0)',
+  rgba: 'rgba(0, 0, 0, 0.5)',
   hsl: 'hsl(0, 0%, 0%)',
-  hsla: 'hsla(0,0%,0%,.5)',
+  hsla: 'hsla(0, 0%, 0%, 0.5)',
 };
 
 module.exports.validTestColorArray = validTestColorArray;
 module.exports.testColorHex = testColorHex;
-module.exports.testColorHexShort = testColorHexShort;
 module.exports.testColorHex8 = testColorHex8;
-module.exports.testColorName = testColorName;
 module.exports.testColorRGB = testColorRGB;
 module.exports.testColorRGBA = testColorRGBA;
 module.exports.testColorHSL = testColorHSL;
