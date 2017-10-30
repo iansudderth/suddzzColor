@@ -60,6 +60,7 @@ const {
   transparentize,
   fadeOut,
   setAlpha,
+  setOpacity,
 } = require('./lib/opacityFunctions');
 
 module.exports.alpha = alpha;
