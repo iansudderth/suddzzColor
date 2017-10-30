@@ -49,3 +49,24 @@ module.exports.red = red;
 module.exports.green = green;
 module.exports.blue = blue;
 module.exports.mix = mix;
+
+// Opacity function exports
+
+const {
+  opacity,
+  alpha,
+  opacify,
+  fadeIn,
+  transparentize,
+  fadeOut,
+  setAlpha,
+} = require('./lib/opacityFunctions');
+
+module.exports.alpha = alpha;
+module.exports.opacity = opacity;
+module.exports.opacify = opacify;
+module.exports.fadeIn = fadeIn;
+module.exports.transparentize = transparentize;
+module.exports.fadeOut = fadeOut;
+module.exports.setAlpha = setAlpha;
+module.exports.setOpacity = setOpacity;
