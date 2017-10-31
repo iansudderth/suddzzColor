@@ -1,10 +1,14 @@
 {
   "name": "suddzzColor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A wrapper for tinyColor for easier use in applications",
   "main": "index.js",
   "author": "Ian Sudderth",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iansudderth/suddzzColor"
+  },
   "prettier": {
     "printWidth": 80,
     "singleQuote": true,
