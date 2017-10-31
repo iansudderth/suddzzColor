@@ -88,11 +88,11 @@ describe('toHex', () => {
 
   it('returns a converted color', () => {
     expect(toHex(blue.rgb)).toBe(blue.hex);
-    expect(toHex(blue.rgba)).toBe(blue.hex8);
+    expect(toHex(blue.rgba)).toBe(blue.hex);
     expect(toHex(blue.hex)).toBe(blue.hex);
-    expect(toHex(blue.hex8)).toBe(blue.hex8);
+    expect(toHex(blue.hex8)).toBe(blue.hex);
     expect(toHex(blue.hsl)).toBe(blue.hex);
-    expect(toHex(blue.hsla)).toBe(blue.hex8);
+    expect(toHex(blue.hsla)).toBe(blue.hex);
   });
 
   it('can accept tinyColor objects as an input', () => {
@@ -100,12 +100,7 @@ describe('toHex', () => {
     expect(toHex(tColor)).toBe(blue.hex);
 
     tColor.setAlpha(0.5);
-    expect(toHex(tColor)).toBe(blue.hex8);
-  });
-
-  it('converts to hex8 when color has an alpha channel value', () => {
-    var convertedColor = toHex('rgba(23,245,132,.4)');
-    expect(hex8Test(convertedColor)).toBe(true);
+    expect(toHex(tColor)).toBe(blue.hex);
   });
 
   it('ignores the alpha value when alphaBypass is set to true', () => {

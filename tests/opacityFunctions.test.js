@@ -69,7 +69,8 @@ describe('opacify', () => {
 
   it('outputs in the given format if one is passed', () => {
     var color = '#FF00FF0f';
-    expect(hex8Test(opacify(color, 0.1, 'hex'))).toBe(true);
+    // colors revert to rgba if alpha channel is not 1
+    expect(rgbaTest(opacify(color, 0.1, 'hex'))).toBe(true);
     expect(hex8Test(opacify(color, 0.1, 'hex8'))).toBe(true);
     expect(rgbaTest(opacify(color, 0.1, 'rgb'))).toBe(true);
     expect(hslaTest(opacify(color, 0.1, 'hsl'))).toBe(true);
@@ -90,7 +91,8 @@ describe('transparentize', () => {
   });
 
   it('returns a color in its original format if none is given', () => {
-    expect(hex8Test(transparentize('#FF00FF', 0.1))).toBe(true);
+    // colors revert to rgba if alpha channel is not 1
+    expect(rgbaTest(transparentize('#FF00FF', 0.1))).toBe(true);
     expect(hex8Test(transparentize('#FF00FF90', 0.1))).toBe(true);
     expect(hslaTest(transparentize('hsl(100, 100%, 50%)', 0.1))).toBe(true);
     expect(hslaTest(transparentize('hsla(100, 100%, 50%, 0.5)', 0.1))).toBe(
@@ -108,7 +110,8 @@ describe('transparentize', () => {
 
   it('outputs in the given format if one is passed', () => {
     var color = '#FF00FF0f';
-    expect(hex8Test(transparentize(color, 0.1, 'hex'))).toBe(true);
+    // colors revert to rgba if alpha channel is not 1
+    expect(rgbaTest(transparentize(color, 0.1, 'hex'))).toBe(true);
     expect(hex8Test(transparentize(color, 0.1, 'hex8'))).toBe(true);
     expect(rgbaTest(transparentize(color, 0.1, 'rgb'))).toBe(true);
     expect(hslaTest(transparentize(color, 0.1, 'hsl'))).toBe(true);
@@ -133,7 +136,7 @@ describe('setAlpha', () => {
   });
 
   it('returns a color in its original format if none is given', () => {
-    expect(hex8Test(setAlpha('#FF00FF', 0.5))).toBe(true);
+    expect(rgbaTest(setAlpha('#FF00FF', 0.5))).toBe(true);
     expect(hex8Test(setAlpha('#FF00FF90', 0.5))).toBe(true);
     expect(hslaTest(setAlpha('hsl(100, 100%, 50%)', 0.5))).toBe(true);
     expect(hslaTest(setAlpha('hsla(100, 100%, 50%, 0.5)', 0.5))).toBe(true);
@@ -149,13 +152,14 @@ describe('setAlpha', () => {
 
   it('outputs in the given format if one is passed', () => {
     var color = '#FF00FF0f';
-    expect(hex8Test(setAlpha(color, 0.5, 'hex'))).toBe(true);
+    // colors revert to rgba if alpha channel is not 1
+    expect(rgbaTest(setAlpha(color, 0.5, 'hex'))).toBe(true);
     expect(hex8Test(setAlpha(color, 0.5, 'hex8'))).toBe(true);
     expect(rgbaTest(setAlpha(color, 0.5, 'rgb'))).toBe(true);
     expect(hslaTest(setAlpha(color, 0.5, 'hsl'))).toBe(true);
   });
 
   it('sets the alpha value of the color to the given value', () => {
-    expect(setAlpha(red.hex, 0.5)).toBe(red.hex8);
+    expect(setAlpha(red.hex, 0.5)).toBe(red.rgba);
   });
 });

@@ -60,7 +60,8 @@ describe('rgba', () => {
 
   it('returns a color in the given format, or rgb if none is defined', () => {
     expect(hslaTest(rgba(255, 0, 0, 0.5, 'hsl'))).toBe(true);
-    expect(hex8Test(rgba(255, 0, 0, 0.5, 'hex'))).toBe(true);
+    // "hex output format reverts to rgba when alpha channel present"
+    expect(rgbaTest(rgba(255, 0, 0, 0.5, 'hex'))).toBe(true);
     expect(hex8Test(rgba(255, 0, 0, 0.5, 'hex8'))).toBe(true);
     expect(rgbaTest(rgba(255, 0, 0, 0.5, 'rgb'))).toBe(true);
   });
