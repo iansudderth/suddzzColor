@@ -1,7 +1,14 @@
-const { convertToTinyColor, bypassAlpha } = require('../lib/internalUtilites');
-const tinyColor = require('tinycolor2');
+const { invert } = require('../index');
 
-// adjustHue('hsl(100, 100%, 50%, .5)', 100);
-var color = tinyColor('#ff6699');
-// color.spin(100);
-console.log(color);
+color = '#FF0000';
+
+console.log(invert(color, 0));
+console.log(invert(color, 50));
+console.log(invert(color, 100));
+console.log(invert(color));
+
+color = '#F0A1B9';
+console.log(invert(color, 50));
+
+color = '#0AA00A';
+console.log(invert(color, 50));

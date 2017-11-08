@@ -24,7 +24,7 @@ Import the package into any javascript file.  I recommend using destructured imp
 import {fadeIn, fadeOut, lighten} from 'suddzzColor'
 ```
 
-The functions can be used are totally agnostic to the CSS-in-JS system, simply taking in strings as arguments and returning strings for most functions.
+The functions are totally agnostic to the CSS-in-JS system, simply taking in strings as arguments and returning strings for most functions.
 
 ## Formats
 
@@ -52,29 +52,40 @@ red('#8080FF', 'bytescale') // 128
 ## Color Modification
 
 ### adjustHue( color , degrees , [outputFormat] )
+Adjusts the hue of the color by the given number of degrees.  Can also accept negative numbers. Colors rotate on a 360 degree scale, so 0, 360, 720, etc.. all return the same value.
 
 ### saturate( color, amount, [outputFormat] )
+Saturates the color by an amount between 0 - 100, representing 0% - 100%.  Negative numbers are the same as calling the `desaturate()` function.
 
 ### desaturate( color, amount, [outputFormat] )
+Desaturates the color by an amount between 0 - 100, representing 0% - 100%.  Negative numbers are the same as calling the `saturate()` function. Calling this function with an amount of 100 is the same as calling the `greyscale()` function.
 
 ### lighten( color, amount, [outputFormat] )
+Lightens the color by an amount between 0 - 100, representing 0% - 100%.  Negative numbers are the same as calling the `darken()` function.
 
 ### darken( color, amount, [outputFormat] )
+Darkens the color by an amount between 0 - 100, representing 0% - 100%.  Negative numbers are the same as calling the `lighten()` function.
 
 ### fadeIn( color, amount, [outputFormat] )  /  opacify(...)
+Increases the opacity of the color by an amount between 0 - 1. Negative numbers are the same as calling the `fadeOut()` function.  The `opacify()` function is an alias of `fadeIn()`, included to keep the API consistent with SASS.
 
 ### fadeOut( color, amount, [outputFormat] )  /  transparentize(...)
+Decreases the opacity of the color by an amount between 0 - 1. Negative numbers are the same as calling the `fadeIN()` function.  The `transparentize()` function is an alias of `fadeOut()`, included to keep the API consistent with SASS.
 
 ### setAlpha( color, alphaValue [outputFormat] )  /  setOpactity(...)
+Sets the alpha (opacity) value of a color to a value between 0 - 1, totally ignoring the previous value.  This function does not accept negative numbers. `setOpacity()` is an alias of `setAlpha()`, included to keep the API consistent with SASS.
 
 ### greyscale( color, [outputFormat] )
+Converts the color to greyscale.
 
 ### complement( color, [outputFormat])
+Generates the complementary color.
 
 ### invert( color, [weight], [outputFormat] )
+Numerically inverts the original color. The `weight` argument sets the weight of the inverted color relative to the old color, the default is 100.
 
 ### mix(color1, color2, [weight], [outputFormat])
-
+Mixes the two colors together to create a new color. The `weight` argument sets the relative weight of the first color in the mix.  The default is 50.
 
 
 ## Color Creation & Conversion
