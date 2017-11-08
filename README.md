@@ -91,37 +91,49 @@ Mixes the two colors together to create a new color. The `weight` argument sets 
 ## Color Creation & Conversion
 
 
-
 ### rgb(red, green, blue, [outputFormat] )
+Creates a color from red, green, and blue values in bytescale (0 - 255).
 
 ### rgba(red, green, blue, alpha, [outputFormat] )
+Creates a color from red, green, blue, and alpha values. `red`, `green`, and `blue` are in bytescale (0 - 255), `alpha` is in decimal (0 - 1).
 
 ### hsl(hue, saturation, lightness, [outputFormat] )
+Creates a color from hue, saturation, and lightness values.  `hue` is in degrees (0 - 360), `saturation` and `lightness` are in decimal (0 - 100).
 
 ### hsla(hue, saturation, lightness, alpha [outputFormat] )
+Creates a color from hue, saturation, lightness and alpha values.  `hue` is in degrees (0 - 360), `saturation` and `lightness` are in decimal (0 - 100), and `alpha` is in decimal ( 0 - 1).
 
 ### toHex( color, [alphaBypass] )
+Converts a color to hex notation. If `alphaBypass` is set to `true`, the color will ignore the alpha value of the color, essentially setting it to 1. For compatibility reasons, `alphaBypass` defaults to `true` for `toHex()`
 
 ### toHex8( color, [simplifyAlpha] )
+Converts a color to hex8 notation.  `simplifyAlpha` will convert a color to normal hex notation if the color's alpha value is 1.
 
 ### toRGB( color, [alphaBypass] )
+Converts a color to rgb or rgba notation. If `alphaBypass` is set to `true`, the color will ignore the alpha value of the color, essentially setting it to 1. 
 
 ### toHSL( color,  [alphaBypass] )
-
-
+Converts a color to hsl or hsla notation. If `alphaBypass` is set to `true`, the color will ignore the alpha value of the color, essentially setting it to 1. 
 
 ## Color Properties
 
 ### hue(color)
+Returns the hue of the color in degrees (0 - 360)
 
 ### saturation( color ,[outputMode] )
+Returns the saturation value of the color. `outputMode` defaults to `'decimal'`
 
 ### lightness( color ,[outputMode] )
+Returns the lightness value of the color. `outputMode` defaults to `'decimal'`
 
 ### red( color ,[outputMode] )
+Returns the red value of the color. `outputMode` defaults to `'bytescale'`
 
 ### green( color ,[outputMode] )
+Returns the green value of the color. `outputMode` defaults to `'bytescale'`
 
 ### blue( color ,[outputMode] )
+Returns the blue value of the color. `outputMode` defaults to `'bytescale'`
 
 ### alpha( color ,[outputMode] ) / opacity(...)
+Returns the alpha value of the color. `outputMode` defaults to `'decimal'`
