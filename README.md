@@ -26,15 +26,28 @@ import {fadeIn, fadeOut, lighten} from 'suddzzColor'
 
 The functions can be used are totally agnostic to the CSS-in-JS system, simply taking in strings as arguments and returning strings for most functions.
 
+## Formats
+
+suddzzColor supports several output formats for colors: hex, hex8, rgb, and rgb.  You do not need to specify rgba or hsla, as they will automatically be used if the alpha value is not 1.
+
 When an output format is not specified, the functions will generally try to use the input format as a guide, though will override if colors are transparent.
 
 ```javascript
-lighten('#f00', 10) // returns '#ff3333'
+lighten('#f00', 10) //  '#ff3333'
 
-fadeOut('#f00', .5) // returns 'rgba(255, 0, 0, .5)'
+fadeOut('#f00', .5) //  'rgba(255, 0, 0, .5)'
 ```
 
 Given that most browsers do not support Hex8 notation, functions will only return it as a value if 'hex8' is passed as the output format, and will convert all hex colors to rgba if the alpha value is not 1.
+
+For color property functions, the outputMode argument determines how the results will be formatted, valid options are: decimal, percent, hex, and bytescale.
+
+```javascript
+red('#8080FF', 'decimal') // .5
+red('#8080FF', 'percent') // 50
+red('#8080FF', 'hex') // '80'
+red('#8080FF', 'bytescale') // 128
+```
 
 ## Color Modification
 
