@@ -12,6 +12,30 @@ The core of suddzzColor is based on the Sass color functions, implementing a sim
 
 ## Basic Usage
 
+Add the package to your project using the git repo
+
+```bash
+yarn add https://github.com/iansudderth/suddzzColor.git
+```
+
+Import the package into any javascript file.  I recommend using destructured imports for clarity.
+
+```javascript
+import {fadeIn, fadeOut, lighten} from 'suddzzColor'
+```
+
+The functions can be used are totally agnostic to the CSS-in-JS system, simply taking in strings as arguments and returning strings for most functions.
+
+When an output format is not specified, the functions will generally try to use the input format as a guide, though will override if colors are transparent.
+
+```javascript
+lighten('#f00', 10) // returns '#ff3333'
+
+fadeOut('#f00', .5) // returns 'rgba(255, 0, 0, .5)'
+```
+
+Given that most browsers do not support Hex8 notation, functions will only return it as a value if 'hex8' is passed as the output format, and will convert all hex colors to rgba if the alpha value is not 1.
+
 ## Color Modification
 
 ### adjustHue( color , degrees , [outputFormat] )
