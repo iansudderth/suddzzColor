@@ -1,7 +1,7 @@
 {
   "name": "suddzzColor",
   "version": "0.1.2",
-  "description": "A wrapper for tinyColor for easier use in applications",
+  "description": "A tinyColor wrapper for easier use in applications",
   "main": "index.js",
   "author": "Ian Sudderth",
   "license": "MIT",
