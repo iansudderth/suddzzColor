@@ -71,3 +71,16 @@ module.exports.transparentize = transparentize;
 module.exports.fadeOut = fadeOut;
 module.exports.setAlpha = setAlpha;
 module.exports.setOpacity = setOpacity;
+
+// Gradient functions
+const {
+  gradient,
+  fadeOutGradient,
+  darkenGradient,
+  lightenGradient,
+} = require('./lib/gradients');
+
+module.exports.gradient = gradient;
+module.exports.fadeOutGradient = fadeOutGradient;
+module.exports.darkenGradient = darkenGradient;
+module.exports.lightenGradient = lightenGradient;
