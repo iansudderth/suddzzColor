@@ -45,6 +45,10 @@ describe('parseGradientArguments', () => {
     const amountFirst = parseGradientArguments('#ff0', '#f00', 0.2, 55);
     expect(amountFirst.amount).toBe(0.2);
     expect(amountFirst.direction).toBe(55);
+
+    const conflictResolution = parseGradientArguments('#ff0', '#f00', 0.2, 0);
+    expect(conflictResolution.amount).toBe(0.2);
+    expect(conflictResolution.direction).toBe(0);
   });
 
   it('returns null if not enough valid colors are passed in', () => {
