@@ -71,6 +71,24 @@ function parseOutputFormat(color, format, fallback) {
   }
 }
 
+function convertByteScale(num) {
+  var mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'decimal';
+
+  if (mode === 'decimal') {
+    return num / 255;
+  } else if (mode === 'percent') {
+    return num / 2.55;
+  } else if (mode === 'hex') {
+    var output = num.toString(16);
+    if (output.length === 1) {
+      output = '0' + output;
+    }
+    return output;
+  } else {
+    return num;
+  }
+}
+
 function convertDecimal(num) {
   var mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'percent';
 
