@@ -1,6 +1,6 @@
 {
   "name": "suddzzColor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tinyColor wrapper for easier use in applications",
   "main": "dist/bundle.js",
   "module": "dis/bundle.esm.js",
