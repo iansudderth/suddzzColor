@@ -61,15 +61,16 @@ function parseOutputFormat(color, format, fallback) {
 
   switch (format) {
     case 'hex':
-      return convert.toHex(color);
+      return toHex(color);
     case 'hex8':
-      return convert.toHex8(color);
+      return toHex8(color);
+      
     case 'hsl':
-      return convert.toHSL(color);
+      return toHSL(color);
     case 'rgb':
-      return convert.toRGB(color);
+      return toRGB(color);
     default:
-      return convert.toHex(color);
+      return toHex(color);
   }
 }
 
