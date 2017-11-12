@@ -1,27 +1,29 @@
-var _ = require('lodash');
+import _ from 'lodash';
 
-var {
+import {
   hslTest,
   hslaTest,
   hexTest,
   hex8Test,
   rgbTest,
   rgbaTest,
-} = require('./formatRegEx');
+} from './formatRegEx';
 
-var {
+import {
   validTestColorArray,
   invalidColorArray,
   red,
   blue,
-} = require('./testColors');
+} from './testColors';
 
-var {
+import {
   alpha,
   opacify,
   transparentize,
   setAlpha,
-} = require('../lib/opacityFunctions');
+} from '../src/opacityFunctions';
+
+// ==================================================
 
 describe('alpha', () => {
   it('returns a number if no mode is given', () => {
@@ -46,6 +48,8 @@ describe('alpha', () => {
     });
   });
 });
+
+// ==================================================
 
 describe('opacify', () => {
   it('returns a string', () => {
@@ -84,6 +88,8 @@ describe('opacify', () => {
     expect(opacify('rgba(255, 0, 0, 0.5)', -0.1)).toBe('rgba(255, 0, 0, 0.4)');
   });
 });
+
+// ==================================================
 
 describe('transparentize', () => {
   it('returns a string', () => {
@@ -129,6 +135,8 @@ describe('transparentize', () => {
     );
   });
 });
+
+// ==================================================
 
 describe('setAlpha', () => {
   it('returns a string', () => {

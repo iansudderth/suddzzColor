@@ -1,9 +1,9 @@
-const tinyColor = require('tinycolor2');
-const {
+import tinyColor from 'tinycolor2';
+import {
   parseOutputFormat,
   convertToTinyColor,
   convertByteScale,
-} = require('./internalUtilites');
+} from './internalUtilites';
 
 function rgb(red = 0, green = 0, blue = 0, outputFormat = 'rgb') {
   var newColor = tinyColor({ r: red, g: green, b: blue });
@@ -89,9 +89,4 @@ function mix(color1, color2, weight = 50, mode) {
   return parseOutputFormat(mixedColor, mode, 'rgb');
 }
 
-module.exports.rgb = rgb;
-module.exports.rgba = rgba;
-module.exports.red = red;
-module.exports.green = green;
-module.exports.blue = blue;
-module.exports.mix = mix;
+export { rgb, rgba, red, green, blue, mix };

@@ -1,8 +1,8 @@
-var _ = require('lodash');
-var tinyColor = require('tinycolor2');
-var { toHSL, toHex, toHex8, toRGB } = require('../lib/conversionFunctions');
+import _ from 'lodash';
+import tinyColor from 'tinycolor2';
+import { toHSL, toHex, toHex8, toRGB } from '../src/conversionFunctions';
 
-var {
+import {
   hslFormat,
   hslaFormat,
   hexFormat,
@@ -15,9 +15,9 @@ var {
   hex8Test,
   rgbTest,
   rgbaTest,
-} = require('./formatRegEx');
+} from './formatRegEx';
 
-var { blue, validTestColorArray, invalidColorArray } = require('./testColors');
+import { blue, validTestColorArray, invalidColorArray } from './testColors';
 
 // ==================================================
 

@@ -1,5 +1,5 @@
-const tinyColor = require('tinycolor2');
-const flattenDeep = require('lodash/flattenDeep');
+import tinyColor from 'tinycolor2';
+import flattenDeep from 'lodash/flattenDeep';
 
 function parseValidDirectionString(directionString) {
   directionString = directionString.toLowerCase();
@@ -167,4 +167,4 @@ function parseGradientArguments(...gradientFunctionArguments) {
   return gradientArguments;
 }
 
-module.exports = parseGradientArguments;
+export default parseGradientArguments;

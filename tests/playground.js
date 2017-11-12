@@ -1,4 +1,4 @@
-const { mapAmountOverArray } = require('../lib/internalUtilites');
+const { mapAmountOverArray } = require('../src/internalUtilites');
 const {
   fadeOutGradient,
   darkenGradient,

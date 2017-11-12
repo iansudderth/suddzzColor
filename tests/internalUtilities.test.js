@@ -1,15 +1,17 @@
-var _ = require('lodash');
-var tinyColor = require('tinycolor2');
-var { getFormat, outputOriginalFormat } = require('../lib/internalUtilites');
-var {
+import _ from 'lodash';
+import tinyColor from 'tinycolor2';
+import { getFormat, outputOriginalFormat } from '../src/internalUtilites';
+import {
   hexTest,
   hex8Test,
   hslaTest,
   hslTest,
   rgbTest,
   rgbaTest,
-} = require('./formatRegEx');
-var { validTestColorArray, invalidColorArray, red } = require('./testColors');
+} from './formatRegEx';
+import { validTestColorArray, invalidColorArray, red } from './testColors';
+
+// ==================================================
 
 describe('getFormat', () => {
   it('returns a string', () => {
@@ -35,6 +37,8 @@ describe('getFormat', () => {
     expect(getFormat(red.name)).toBe('name');
   });
 });
+
+// ==================================================
 
 describe('outputOriginalFormat', () => {
   it('returns a string', () => {

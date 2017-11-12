@@ -1,11 +1,11 @@
-const tinyColor = require('tinycolor2');
-const {
+import tinyColor from 'tinycolor2';
+import {
   parseOutputFormat,
   convertToTinyColor,
   convertByteScale,
   convertDecimal,
   getFormat,
-} = require('./internalUtilites');
+} from './internalUtilites';
 
 // outputMode  =  decimal, percent, hex, byteScale
 function alpha(color, outputMode = 'decimal') {
@@ -80,11 +80,13 @@ function setAlpha(color, alphaValue = 1, outputFormat) {
 
 const setOpacity = setAlpha;
 
-module.exports.alpha = alpha;
-module.exports.opacity = opacity;
-module.exports.opacify = opacify;
-module.exports.fadeIn = fadeIn;
-module.exports.transparentize = transparentize;
-module.exports.fadeOut = fadeOut;
-module.exports.setAlpha = setAlpha;
-module.exports.setOpacity = setOpacity;
+export {
+  alpha,
+  opacity,
+  opacify,
+  fadeIn,
+  transparentize,
+  fadeOut,
+  setAlpha,
+  setOpacity,
+};

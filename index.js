@@ -1,15 +1,12 @@
 // Conversion function exports
 
-const { toHex, toHex8, toHSL, toRGB } = require('./lib/conversionFunctions');
+import { toHex, toHex8, toHSL, toRGB } from './src/conversionFunctions';
 
-module.exports.toHex = toHex;
-module.exports.toHex8 = toHex8;
-module.exports.toHSL = toHSL;
-module.exports.toRGB = toRGB;
+export { toHex, toHex8, toHSL, toRGB };
 
 // HSL function exports
 
-const {
+import {
   hsl,
   hsla,
   hue,
@@ -23,36 +20,33 @@ const {
   greyScale,
   complement,
   invert,
-} = require('./lib/HSLfunctions');
+} from './src/HSLfunctions';
 
-module.exports.hsl = hsl;
-module.exports.hsla = hsla;
-module.exports.hue = hue;
-module.exports.saturation = saturation;
-module.exports.lightness = lightness;
-module.exports.adjustHue = adjustHue;
-module.exports.lighten = lighten;
-module.exports.darken = darken;
-module.exports.saturate = saturate;
-module.exports.desaturate = desaturate;
-module.exports.greyScale = greyScale;
-module.exports.complement = complement;
-module.exports.invert = invert;
+export {
+  hsl,
+  hsla,
+  hue,
+  saturation,
+  lightness,
+  adjustHue,
+  saturate,
+  desaturate,
+  lighten,
+  darken,
+  greyScale,
+  complement,
+  invert,
+};
 
 // RGB function exports
 
-const { rgb, rgba, red, green, blue, mix } = require('./lib/RGBfunctions');
+import { rgb, rgba, red, green, blue, mix } from './src/RGBfunctions';
 
-module.exports.rgb = rgb;
-module.exports.rgba = rgba;
-module.exports.red = red;
-module.exports.green = green;
-module.exports.blue = blue;
-module.exports.mix = mix;
+export { rgb, rgba, red, green, blue, mix };
 
 // Opacity function exports
 
-const {
+import {
   opacity,
   alpha,
   opacify,
@@ -61,26 +55,25 @@ const {
   fadeOut,
   setAlpha,
   setOpacity,
-} = require('./lib/opacityFunctions');
+} from './src/opacityFunctions';
 
-module.exports.alpha = alpha;
-module.exports.opacity = opacity;
-module.exports.opacify = opacify;
-module.exports.fadeIn = fadeIn;
-module.exports.transparentize = transparentize;
-module.exports.fadeOut = fadeOut;
-module.exports.setAlpha = setAlpha;
-module.exports.setOpacity = setOpacity;
+export {
+  opacity,
+  alpha,
+  opacify,
+  fadeIn,
+  transparentize,
+  fadeOut,
+  setAlpha,
+  setOpacity,
+};
 
 // Gradient functions
-const {
+import {
   gradient,
   fadeOutGradient,
   darkenGradient,
   lightenGradient,
-} = require('./lib/gradients');
+} from './src/gradients';
 
-module.exports.gradient = gradient;
-module.exports.fadeOutGradient = fadeOutGradient;
-module.exports.darkenGradient = darkenGradient;
-module.exports.lightenGradient = lightenGradient;
+export { gradient, fadeOutGradient, darkenGradient, lightenGradient };

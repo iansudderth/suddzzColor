@@ -2,7 +2,7 @@
   "name": "suddzzColor",
   "version": "0.2.0",
   "description": "A tinyColor wrapper for easier use in applications",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "author": "Ian Sudderth",
   "license": "MIT",
   "repository": {
@@ -30,8 +30,13 @@
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest": "^6.24.1",
     "eslint-config-prettier": "^2.6.0",
     "jest": "^21.2.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "rollup-plugin-babel": "^3.0.2"
   }
 }

@@ -1,10 +1,10 @@
-const utilities = require('./internalUtilites');
-var tinyColor = require('tinycolor2');
+import { convertToTinyColor, bypassAlpha } from './internalUtilites';
+import tinyColor from 'tinycolor2';
 
 function toHSL(color, alphaBypass = false) {
-  color = utilities.convertToTinyColor(color);
+  color = convertToTinyColor(color);
   if (color.isValid()) {
-    color = utilities.bypassAlpha(color, alphaBypass);
+    color = bypassAlpha(color, alphaBypass);
     return color.toHslString();
   } else {
     return null;
@@ -12,9 +12,9 @@ function toHSL(color, alphaBypass = false) {
 }
 
 function toHex(color, alphaBypass = true) {
-  color = utilities.convertToTinyColor(color);
+  color = convertToTinyColor(color);
   if (color.isValid()) {
-    color = utilities.bypassAlpha(color, alphaBypass);
+    color = bypassAlpha(color, alphaBypass);
     if (color.getAlpha() !== 1) {
       return color.toHex8String();
     } else {
@@ -26,7 +26,7 @@ function toHex(color, alphaBypass = true) {
 }
 
 function toHex8(color, simplifyAlpha = false) {
-  color = utilities.convertToTinyColor(color);
+  color = convertToTinyColor(color);
   if (color.isValid()) {
     if (simplifyAlpha) {
       if (color.getAlpha() == 1) {
@@ -41,9 +41,9 @@ function toHex8(color, simplifyAlpha = false) {
 }
 
 function toRGB(color, alphaBypass = false) {
-  color = utilities.convertToTinyColor(color);
+  color = convertToTinyColor(color);
   if (color.isValid()) {
-    color = utilities.bypassAlpha(color, alphaBypass);
+    color = bypassAlpha(color, alphaBypass);
     return color.toRgbString();
   } else {
     return null;
@@ -54,3 +54,5 @@ module.exports.toHSL = toHSL;
 module.exports.toHex = toHex;
 module.exports.toHex8 = toHex8;
 module.exports.toRGB = toRGB;
+
+export { toHSL, toHex, toHex8, toRGB };

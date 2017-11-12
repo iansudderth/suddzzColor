@@ -1,5 +1,5 @@
-const tinyColor = require('tinycolor2');
-var convert = require('./conversionFunctions');
+import tinyColor from 'tinycolor2';
+import { toHex, toHex8, toHSL, toRGB } from './conversionFunctions';
 
 function getFormat(color) {
   color = convertToTinyColor(color);
@@ -53,19 +53,20 @@ function parseOutputFormat(color, format, fallback) {
 
   switch (format) {
     case 'hex':
-      return convert.toHex(color);
+      return toHex(color);
     case 'hex8':
-      return convert.toHex8(color);
+      return toHex8(color);
+      ``;
     case 'hsl':
-      return convert.toHSL(color);
+      return toHSL(color);
     case 'rgb':
-      return convert.toRGB(color);
+      return toRGB(color);
     default:
-      return convert.toHex(color);
+      return toHex(color);
   }
 }
 
-function convertByteScale(num, mode = 'decimal') {
+function gitByteScale(num, mode = 'decimal') {
   if (mode === 'decimal') {
     return num / 255;
   } else if (mode === 'percent') {
@@ -116,11 +117,13 @@ function mapAmountOverArray(arr, amount, callback) {
   });
 }
 
-module.exports.getFormat = getFormat;
-module.exports.outputOriginalFormat = outputOriginalFormat;
-module.exports.bypassAlpha = bypassAlpha;
-module.exports.convertToTinyColor = convertToTinyColor;
-module.exports.parseOutputFormat = parseOutputFormat;
-module.exports.convertByteScale = convertByteScale;
-module.exports.convertDecimal = convertDecimal;
-module.exports.mapAmountOverArray = mapAmountOverArray;
+export {
+  getFormat,
+  outputOriginalFormat,
+  bypassAlpha,
+  convertToTinyColor,
+  parseOutputFormat,
+  convertByteScale,
+  convertDecimal,
+  mapAmountOverArray,
+};

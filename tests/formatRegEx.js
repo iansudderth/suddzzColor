@@ -29,20 +29,21 @@ const hex8Test = testFromRegEx(hex8Format);
 const rgbTest = testFromRegEx(rgbFormat);
 const rgbaTest = testFromRegEx(rgbaFormat);
 
-module.exports.hsvFormat = hsvFormat;
-module.exports.hsvaFormat = hsvaFormat;
-module.exports.hslFormat = hslFormat;
-module.exports.hslaFormat = hslaFormat;
-module.exports.hexFormat = hexFormat;
-module.exports.hex8Format = hex8Format;
-module.exports.rgbFormat = rgbFormat;
-module.exports.rgbaFormat = rgbaFormat;
-
-module.exports.hsvTest = hsvTest;
-module.exports.hsvaTest = hsvaTest;
-module.exports.hslTest = hslTest;
-module.exports.hslaTest = hslaTest;
-module.exports.hexTest = hexTest;
-module.exports.hex8Test = hex8Test;
-module.exports.rgbTest = rgbTest;
-module.exports.rgbaTest = rgbaTest;
+export {
+  hsvFormat,
+  hsvaFormat,
+  hslFormat,
+  hslaFormat,
+  hexFormat,
+  hex8Format,
+  rgbFormat,
+  rgbaFormat,
+  hsvTest,
+  hsvaTest,
+  hslTest,
+  hslaTest,
+  hexTest,
+  hex8Test,
+  rgbTest,
+  rgbaTest,
+};

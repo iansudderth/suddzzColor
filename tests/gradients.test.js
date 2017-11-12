@@ -1,13 +1,15 @@
-const tinyColor = require('tinycolor2');
-const _ = require('lodash');
-const {
+import tinyColor from 'tinycolor2';
+import _ from 'lodash';
+import {
   gradient,
   fadeOutGradient,
   lightenGradient,
   darkenGradient,
-} = require('../lib/gradients');
+} from '../src/gradients';
 
-const { red, green, blue } = require('./testColors');
+import { red, green, blue } from './testColors';
+
+// ==================================================
 
 describe('gradient', () => {
   var expectedGradient = 'linear-gradient(to top, #ff0000, #ffff00)';
@@ -46,6 +48,8 @@ describe('gradient', () => {
   });
 });
 
+// ==================================================
+
 describe('fadeOutGradient', () => {
   it('fades a color out by the given amount over the gradient', () => {
     var expectedOutput =
@@ -69,6 +73,8 @@ describe('fadeOutGradient', () => {
     );
   });
 });
+
+// ==================================================
 
 describe('lightenGradient', () => {
   it('lightens a color in by the given amount over the gradient', () => {
@@ -95,6 +101,8 @@ describe('lightenGradient', () => {
     expect(lightenGradient('#ff0000', 'top')).toBe(expectedOutput);
   });
 });
+
+// ==================================================
 
 describe('darkenGradient', () => {
   it('darkens a color in by the given amount over the gradient', () => {

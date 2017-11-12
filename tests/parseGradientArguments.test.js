@@ -1,7 +1,9 @@
-const _ = require('lodash');
-const tinyColor = require('tinycolor2');
-const parseGradientArguments = require('../lib/parseGradientArguments');
-const { red, blue, green, black, white } = require('./testColors');
+import _ from 'lodash';
+import tinyColor from 'tinycolor2';
+import parseGradientArguments from '../src/parseGradientArguments';
+import { red, blue, green, black, white } from './testColors';
+
+// ==================================================
 
 describe('parseGradientArguments', () => {
   var parsedArguments = parseGradientArguments('to right', 'red', 'blue', 20);

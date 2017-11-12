@@ -1,20 +1,22 @@
-var _ = require('lodash');
+import _ from 'lodash';
 
-var { rgb, rgba, red, green, blue, mix } = require('../lib/RGBfunctions');
+import { rgb, rgba, red, green, blue, mix } from '../src/RGBfunctions';
 
-var {
+import {
   hslTest,
   hslaTest,
   hexTest,
   hex8Test,
   rgbTest,
   rgbaTest,
-} = require('./formatRegEx');
+} from './formatRegEx';
 
-var { validTestColorArray, invalidColorArray } = require('./testColors');
+import { validTestColorArray, invalidColorArray } from './testColors';
 
-var testRedRGB = 'rgb(255, 0, 0)';
-var testRedRGBA = 'rgba(255, 0, 0, 0.5)';
+const testRedRGB = 'rgb(255, 0, 0)';
+const testRedRGBA = 'rgba(255, 0, 0, 0.5)';
+
+// ==================================================
 
 describe('rgb', () => {
   it('returns a string', () => {
@@ -40,6 +42,8 @@ describe('rgb', () => {
     expect(rgbTest(rgb(255, 0, 0, 'rgb'))).toBe(true);
   });
 });
+
+// ==================================================
 
 describe('rgba', () => {
   it('returns a string', () => {
@@ -67,6 +71,8 @@ describe('rgba', () => {
   });
 });
 
+// ==================================================
+
 describe('red', () => {
   it('returns a number if no output mode is passed', () => {
     expect(typeof red(testRedRGB)).toBe('number');
@@ -89,6 +95,8 @@ describe('red', () => {
     expect(red(testRedRGB, 'hex')).toBe('ff');
   });
 });
+
+// ==================================================
 
 describe('green', () => {
   it('returns a number if no output mode is passed', () => {
@@ -113,6 +121,8 @@ describe('green', () => {
   });
 });
 
+// ==================================================
+
 describe('blue', () => {
   it('returns a number if no output mode is passed', () => {
     expect(typeof red(testRedRGB)).toBe('number');
@@ -135,6 +145,8 @@ describe('blue', () => {
     expect(blue(testRedRGB, 'hex')).toBe('00');
   });
 });
+
+// ==================================================
 
 describe('mix', () => {
   it('returns a string', () => {
