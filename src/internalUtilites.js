@@ -1,5 +1,4 @@
-const tinyColor = require('tinycolor2');
-var convert = require('./conversionFunctions');
+import tinyColor from 'tinycolor2';
 
 function getFormat(color) {
   color = convertToTinyColor(color);
@@ -116,11 +115,13 @@ function mapAmountOverArray(arr, amount, callback) {
   });
 }
 
-module.exports.getFormat = getFormat;
-module.exports.outputOriginalFormat = outputOriginalFormat;
-module.exports.bypassAlpha = bypassAlpha;
-module.exports.convertToTinyColor = convertToTinyColor;
-module.exports.parseOutputFormat = parseOutputFormat;
-module.exports.convertByteScale = convertByteScale;
-module.exports.convertDecimal = convertDecimal;
-module.exports.mapAmountOverArray = mapAmountOverArray;
+export {
+  getFormat,
+  outputOriginalFormat,
+  bypassAlpha,
+  convertToTinyColor,
+  parseOutputFormat,
+  convertByteScale,
+  convertDecimal,
+  mapAmountOverArray,
+};

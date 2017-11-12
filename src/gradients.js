@@ -1,10 +1,8 @@
-const tinyColor = require('tinycolor2');
-const parseGradientArguments = require('./parseGradientArguments');
-const {
-  outputOriginalFormat,
-  mapAmountOverArray,
-} = require('./internalUtilites');
-const { fadeOut, lighten, darken } = require('../index');
+import tinyColor from 'tinycolor2';
+import parseGradientArguments from './parseGradientArguments';
+import { outputOriginalFormat, mapAmountOverArray } from './internalUtilites';
+import { lighten, darken } from './HSLfunctions';
+import { fadeOut } from './opacityFunctions';
 
 function buildGradientString(direction = 'to right', colorArray) {
   if (!Array.isArray(colorArray) || colorArray.length < 1) {
@@ -155,7 +153,4 @@ function darkenGradient(...args) {
   return buildGradientString(direction, colors);
 }
 
-module.exports.gradient = gradient;
-module.exports.fadeOutGradient = fadeOutGradient;
-module.exports.lightenGradient = lightenGradient;
-module.exports.darkenGradient = darkenGradient;
+export { gradient, fadeOutGradient, lightenGradient, darkenGradient };

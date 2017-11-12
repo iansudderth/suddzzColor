@@ -1,11 +1,11 @@
-const tinyColor = require('tinycolor2');
-const {
+import tinyColor from 'tinycolor2';
+import {
   parseOutputFormat,
   convertToTinyColor,
   convertByteScale,
   convertDecimal,
   getFormat,
-} = require('./internalUtilites');
+} from './internalUtilites';
 
 function hsl(hue = 0, saturation = 0, lightness = 0, mode = 'hsl') {
   var newColor = tinyColor({ h: hue, s: saturation, l: lightness });
@@ -172,16 +172,18 @@ function invert(color, weight = 100, outputFormat) {
   return parseOutputFormat(outputColor, outputFormat, format);
 }
 
-module.exports.hsl = hsl;
-module.exports.hsla = hsla;
-module.exports.hue = hue;
-module.exports.saturation = saturation;
-module.exports.lightness = lightness;
-module.exports.adjustHue = adjustHue;
-module.exports.lighten = lighten;
-module.exports.darken = darken;
-module.exports.saturate = saturate;
-module.exports.desaturate = desaturate;
-module.exports.greyScale = greyScale;
-module.exports.complement = complement;
-module.exports.invert = invert;
+export {
+  hsl,
+  hsla,
+  hue,
+  saturation,
+  lightness,
+  adjustHue,
+  lighten,
+  darken,
+  saturate,
+  desaturate,
+  greyScale,
+  complement,
+  invert,
+};
