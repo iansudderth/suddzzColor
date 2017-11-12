@@ -1,6 +1,6 @@
-var _ = require('lodash');
+import _ from 'lodash';
 
-var {
+import {
   hsl,
   hsla,
   hue,
@@ -14,23 +14,23 @@ var {
   greyScale,
   complement,
   invert,
-} = require('../lib/HSLfunctions');
+} from '../src/HSLfunctions';
 
-var {
+import {
   hslTest,
   hslaTest,
   hexTest,
   hex8Test,
   rgbTest,
   rgbaTest,
-} = require('./formatRegEx');
+} from './formatRegEx';
 
-var {
+import {
   validTestColorArray,
   invalidColorArray,
   red,
   blue,
-} = require('./testColors');
+} from './testColors';
 
 // ==================================================
 
