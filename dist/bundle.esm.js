@@ -1,11 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var tinyColor = _interopDefault(require('tinycolor2'));
-var flattenDeep = _interopDefault(require('lodash/flattenDeep'));
+import tinyColor from 'tinycolor2';
+import flattenDeep from 'lodash/flattenDeep';
 
 function getFormat(color) {
   color = convertToTinyColor(color);
@@ -905,38 +899,4 @@ function darkenGradient() {
 
 // Gradient functions
 
-exports.toHex = toHex;
-exports.toHex8 = toHex8;
-exports.toHSL = toHSL;
-exports.toRGB = toRGB;
-exports.hsl = hsl;
-exports.hsla = hsla;
-exports.hue = hue;
-exports.saturation = saturation;
-exports.lightness = lightness;
-exports.adjustHue = adjustHue;
-exports.saturate = saturate;
-exports.desaturate = desaturate;
-exports.lighten = lighten;
-exports.darken = darken;
-exports.greyScale = greyScale;
-exports.complement = complement;
-exports.invert = invert;
-exports.rgb = rgb;
-exports.rgba = rgba;
-exports.red = red;
-exports.green = green;
-exports.blue = blue;
-exports.mix = mix;
-exports.opacity = opacity;
-exports.alpha = alpha;
-exports.opacify = opacify;
-exports.fadeIn = fadeIn;
-exports.transparentize = transparentize;
-exports.fadeOut = fadeOut;
-exports.setAlpha = setAlpha;
-exports.setOpacity = setOpacity;
-exports.gradient = gradient;
-exports.fadeOutGradient = fadeOutGradient;
-exports.darkenGradient = darkenGradient;
-exports.lightenGradient = lightenGradient;
+export { toHex, toHex8, toHSL, toRGB, hsl, hsla, hue, saturation, lightness, adjustHue, saturate, desaturate, lighten, darken, greyScale, complement, invert, rgb, rgba, red, green, blue, mix, opacity, alpha, opacify, fadeIn, transparentize, fadeOut, setAlpha, setOpacity, gradient, fadeOutGradient, darkenGradient, lightenGradient };

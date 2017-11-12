@@ -1,11 +1,8 @@
+var suddzzColor = (function (exports,tinyColor,flattenDeep) {
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var tinyColor = _interopDefault(require('tinycolor2'));
-var flattenDeep = _interopDefault(require('lodash/flattenDeep'));
+tinyColor = tinyColor && tinyColor.hasOwnProperty('default') ? tinyColor['default'] : tinyColor;
+flattenDeep = flattenDeep && flattenDeep.hasOwnProperty('default') ? flattenDeep['default'] : flattenDeep;
 
 function getFormat(color) {
   color = convertToTinyColor(color);
@@ -940,3 +937,7 @@ exports.gradient = gradient;
 exports.fadeOutGradient = fadeOutGradient;
 exports.darkenGradient = darkenGradient;
 exports.lightenGradient = lightenGradient;
+
+return exports;
+
+}({},tinyColor,flattenDeep));
