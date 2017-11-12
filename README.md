@@ -137,3 +137,60 @@ Returns the blue value of the color. `outputMode` defaults to `'bytescale'`
 
 ### alpha( color ,[outputMode] ) / opacity(...)
 Returns the alpha value of the color. `outputMode` defaults to `'decimal'`
+
+## Gradient Functions
+Gradient functions in suddzzColor are designed to intelligently interpret arguments, meaning you can usually pass them in any order, however this is mostly as a fallback, and it is recommended that you do not push this too far. In general, as long as you make sure there is no conflict between the `direction` and `amount` arguments, then the function should parse the arguments correctly.  `colors` can be passed in as an array or multiple arguments.
+
+```javascript
+gradient(['#f00', '#ff0'], 'right') // linear-gradient(to right, #ff0000, #ffff00)
+gradient('#f00', '#ff0', 'right') // linear-gradient(to right, #ff0000, #ffff00)
+
+fadeOutGradient(0.5, '#f00', 180) // linear-gradient(180deg, #ff0000, rgba(255, 0, 0, 0.5))
+fadeOutGradient('#f00', 0.5, 180) // linear-gradient(180deg, #ff0000, rgba(255, 0, 0, 0.5))
+fadeOutGradient('#f00', 180, 0.5) // linear-gradient(180deg, #ff0000, rgba(255, 0, 0, 0.5))
+```
+
+#### colors
+An array of colors or passed in as multiple arguments. Can be in any form supported by tinycolor.  Will be discarded if invalid.
+
+#### direction
+A string or number representing the direction of the gradient.  Can be a direction, a number to be passed in as degrees, or a string representation i.e. `gradient('#ff0', '#f00', '270deg')`
+
+```javascript
+// valid directions:
+['top','right','bottom','left','top right','top left', 'bottom right', 'bottom left']
+
+// also supports directions with the 'to' prefix:
+['to top','to right','to bottom','to left','to top right','to top left', 'to bottom right', 'to bottom left']
+```
+`direction` defaults to `'to right'`
+
+#### amount
+A number indicating the strength of the effect. Must be a number between 0 - 1. `amount` arguments always default to 1.
+
+### gradient( colors... , direction )
+Creates a gradient with the properties passed in.
+```javascript
+gradient('#f00','#00f', 'top') // linear-gradient(to top, #f00, #00f)
+```
+
+### fadeOutGradient( colors... , amount , direction )
+Creates a gradient that reduces by the `amount`.  If more than 2 colors are passed in, the opacity change will be evenly distributed over the colors in the gradient.
+```javascript
+fadeOutGradient('#f00', '#0f0', '#00f', 0.5, 180)
+//linear-gradient(180, #ff0000, rgba(0, 255, 0, 0.75), rgba(0, 0, 255, 0.5))
+```
+
+### darkenGradient( colors... , amount , direction )
+Creates a gradient that darkens color by the `amount`. If more than 2 colors are passed in, the effect will be evenly distributed over the colors in the gradient. Negative `amount` values will lighten the color.
+```javascript
+darkenGradient('#f00', '#0f0', '#00f', 0.5, 180)
+//linear-gradient(180deg, #ff0000, #008000, #000000)
+```
+
+### lightenGradient( colors... , amount , direction )
+Creates a gradient that darkens color by the `amount`. If more than 2 colors are passed in, the effect will be evenly distributed over the colors in the gradient.  Negative `amount` values will darken the color.
+```javascript
+lightenGradient('#f00', '#0f0', '#00f', 0.5, 180)
+//linear-gradient(180deg, #ff0000, #80ff80, #ffffff)
+```

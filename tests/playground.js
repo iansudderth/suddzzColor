@@ -1,4 +1,8 @@
 const { mapAmountOverArray } = require('../lib/internalUtilites');
-const { fadeOut } = require('../index');
+const {
+  fadeOutGradient,
+  darkenGradient,
+  lightenGradient,
+} = require('../index');
 
-console.log(fadeOut('rgb(255,0,0)', 0.5));
+console.log(lightenGradient('#f00', '#0f0', '#00f', 0.5, 180));
