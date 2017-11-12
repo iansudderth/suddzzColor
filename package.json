@@ -1,8 +1,9 @@
 {
   "name": "suddzzColor",
-  "version": "0.2.0",
+  "version": "1.0.1",
   "description": "A tinyColor wrapper for easier use in applications",
   "main": "dist/bundle.js",
+  "module": "dis/bundle.esm.js",
   "author": "Ian Sudderth",
   "license": "MIT",
   "repository": {
@@ -24,9 +25,13 @@
     "test-coverage": "jest --coverage",
     "test-full": "jest --coverage --verbose",
     "test-changed": "jest --onlyChanged",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
   },
+  "pre-commit":["build"],
   "dependencies": {
+    "lodash": "^4.17.4",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
@@ -36,7 +41,7 @@
     "babel-preset-latest": "^6.24.1",
     "eslint-config-prettier": "^2.6.0",
     "jest": "^21.2.1",
-    "lodash": "^4.17.4",
+    "pre-commit": "^1.2.2",
     "rollup-plugin-babel": "^3.0.2"
   }
 }
