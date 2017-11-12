@@ -66,7 +66,7 @@ function parseOutputFormat(color, format, fallback) {
   }
 }
 
-function gitByteScale(num, mode = 'decimal') {
+function convertByteScale(num, mode = 'decimal') {
   if (mode === 'decimal') {
     return num / 255;
   } else if (mode === 'percent') {
